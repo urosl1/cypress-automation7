@@ -1,3 +1,18 @@
+// Cypress testing preformed on the VivifyScrum stage, URL: https://cypress.vivifyscrum-stage.com/
+
+//The code includes the following tests:
+// Account login
+// Organization creation
+// Complex organization details edit
+// Organization deletion
+// Organization archive
+// Organization unarchive
+// Archived Org deletion
+// Project addition
+// Board addition
+// Complex account details edit
+// Account logout
+
 /// <reference types="Cypress" />
 
 import { login } from "../page_objects/login";
@@ -8,7 +23,7 @@ const faker = require("faker");
 
 describe("Login test", () => {
   let loginData = {
-    email: "urosletic02@gmail.com",
+    email: "urosletic03@gmail.com",
     password: "9214AZrQc",
     newPassword: "9214AZrQc2",
     firstName: faker.name.firstName(),
@@ -49,7 +64,7 @@ describe("Login test", () => {
     });
   });
 
-  it("create organization without image", () => {
+  it.only("create organization without image", () => {
     cy.intercept({
       method: "POST",
       url: "https://cypress-api.vivifyscrum-stage.com/api/v2/organizations",
@@ -69,7 +84,7 @@ describe("Login test", () => {
     });
   });
 
-  it("archive organization", () => {
+  it.only("archive organization", () => {
     cy.intercept({
       method: "PUT",
       url: `https://cypress-api.vivifyscrum-stage.com/api/v2/organizations/${orgId}/status`,
