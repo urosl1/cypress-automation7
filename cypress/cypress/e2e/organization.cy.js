@@ -23,7 +23,7 @@ const faker = require("faker");
 
 describe("Login test", () => {
   let loginData = {
-    email: "urosletic03@gmail.com",
+    email: "urosletic04@gmail.com",
     password: "9214AZrQc",
     newPassword: "9214AZrQc2",
     firstName: faker.name.firstName(),
